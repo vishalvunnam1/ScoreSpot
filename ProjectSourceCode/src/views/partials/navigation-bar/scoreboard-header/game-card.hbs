@@ -1,0 +1,35 @@
+<div class="game-card" id="game-card">
+    <div class="score-card-body">
+
+        <!-- Left side (70%) -->
+        <div class="card-team-container">
+
+            <!-- Team 1 Name with Score -->
+            <div class="team">
+                <a href="/club/{{homeTeam.teamID}}">
+                    <img src="{{ homeTeam.crest }}" alt="{{ homeTeam.name }} Crest">
+                    <p id="team-name">{{ homeTeam.name }}</p> <!-- {{team1.name}} -->
+                    <p id="team-score">{{ score.homeScore }}</p>
+                </a>
+            </div>
+            <!-- Team 2 Name with Score -->
+            <div class="team">
+                <a href="/club/{{awayTeam.teamID}}">
+                    <img src="{{ awayTeam.crest }}" alt="{{ awayTeam.name }} Crest">
+                    <p id="team-name">{{ awayTeam.name }}</p> <!-- {{team1.name}} -->
+                    <p id="team-score">{{ score.awayScore }}</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Right side (30%) -->
+        <div class="card-game-information-container">
+            
+            <!-- Time -->
+            <div class="game-info">
+                <p id="time">{{ minute }}</p>
+            </div>
+        </div>
+
+    </div>
+</div>

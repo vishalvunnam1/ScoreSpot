@@ -1,0 +1,71 @@
+<!-- Include jQuery library -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- HTML structure -->
+<nav class="navbar navbar-expand-lg navbar-dark" id="navigation-bar-container">
+  <div class="container-fluid d-flex justify-content align-items-center">
+    <div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation" style="margin-right: 20px;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="logo" id="logo" href="/home">ScoreSpot</a>
+      <div id="line"></div>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0" id="navbar-list">
+
+        <li class="nav-item">
+          <a class="nav-link" href="/league/2021">Premier League</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/league/2002">Bundesliga</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/league/2014">La Liga</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/league/2019">Serie A</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/league/2015">Ligue 1</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/league/2013">Brasileirao</a>
+        </li>
+
+      </ul>
+    </div>
+
+    <div id="favorite-teams-container" class="logos-container">
+      {{#each fav_teams}}
+        <a href="/club/{{this.teamid}}">
+          <img id="teamlogo" src="{{this.teamlogo}}" alt="teamlogo">
+        </a>
+      {{/each}}
+    </div>
+
+    <div id="user-profile-button" class="user-icon">
+      <img src="/img/navigation-bar/user-menu/user-button.png" alt="Account" class="img-fluid">
+    </div>
+
+  </div>
+</nav>
+
+{{#if user.username}}
+<div class="account-portal" id="account-screen-container">
+  {{> navigation-bar/user-menu/account-screen}}
+</div>
+{{else}}
+<div class="account-portal" id="login-account-container">
+  {{> navigation-bar/user-menu/login}}
+</div>
+{{/if}}
+
+<div class="account-portal" id="register-screen-container">
+  {{> navigation-bar/user-menu/register}}
+</div>

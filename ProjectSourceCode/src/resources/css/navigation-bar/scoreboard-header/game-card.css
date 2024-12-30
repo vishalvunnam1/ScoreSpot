@@ -1,0 +1,87 @@
+.scoreboard-league-container {
+    height: 100%;
+}
+
+#game-card {
+    
+    display: inline-block; /* Display cards as inline-block to allow them to sit next to each other */
+    margin: 0px;
+    height: 100%;
+    background: linear-gradient(to right, white, rgb(245, 245, 245), rgb(227, 227, 227)); /* Gradient from white to gray */
+    padding: 10px; /* Adjust padding as needed */
+    position: relative; /* Needed for absolute positioning */
+    overflow: hidden; /* Hide the overflowing skewed content */
+    transform: skewX(-20deg); /* Skew the banner to create a triangular side */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for smooth transformation and box-shadow */
+    
+    transition: transform 0.4s ease; /* Add transition for smooth effect */
+}
+
+
+
+#game-card:hover {
+    transform: skewX(-20deg) scale(1.05); /* Increase scale on hover to make it pop */
+    z-index: 998;
+    box-shadow: 
+        -10px 0 20px rgba(0, 0, 0, 0.3), /* Shadow on the left side */
+        10px 0 20px rgba(0, 0, 0, 0.3), /* Shadow on the right side */
+        0 0 20px rgba(0, 0, 0, 0.3); /* Default shadow */
+}
+
+
+/* Entire Card Information Body */
+.score-card-body {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end
+    align-items: center;
+    transform: skewX(20deg); /* Counter-skew the content to maintain its appearance */
+}
+
+/* Left Side of Container (Scores) */
+.card-team-container {
+    flex: 70%;
+    flex-grow: 1; /* Both team containers will grow to occupy equal width */
+    flex-direction: column; /* Stacks each team over one another */
+}
+
+/* Right Side of Container (Time) */
+.card-game-information-container {
+    flex: 30%;
+    display: flex;
+    align-items: center;
+    margin: 0px 15px;
+}
+
+/* Center the time in game */
+#time {
+    margin: 0;
+}
+
+/* Container for each team in card's information */
+.team {
+    align-items: center; /* Center items vertically */
+    padding: 5px;
+}
+
+.team a {
+    color: black;
+    display: flex;
+    text-decoration: none;
+    margin: 0;
+}
+
+
+.team p {
+    margin: 0; /* Remove default margin */
+}
+
+#team-name {
+    margin-right: 10px;
+}
+
+.team img {
+    max-width: 20px; /* Set the width of the image to 100% of its container */
+    max-height: 20px; /* Maintain the aspect ratio */
+    margin-right: 10px;
+}

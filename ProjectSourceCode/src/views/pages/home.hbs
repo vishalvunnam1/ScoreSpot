@@ -1,0 +1,36 @@
+<div class="container mt-5" id="page-container">
+    <div id="league-cards-container" class="page-section-container">
+        <div class="row g-3" id="card-row">
+            <!-- 🇬🇧 Premier League -->
+            <a href="#" onclick="redirectToLeaguePage('2021')" class="card-link" id="league-card">
+                {{> homepage/league-card leagueName="Premier League" logo="./img/homepage/premier-league/icon.png" title="./img/homepage/premier-league/title.png" }}
+            </a>
+
+            <!-- 🇪🇸 La Liga -->
+            <a href="#" onclick="redirectToLeaguePage('2014')" class="card-link" id="league-card">
+                {{> homepage/league-card leagueName="La Liga" logo="./img/homepage/la-liga/icon.png" title="./img/homepage/la-liga/title.png" }}
+            </a>
+
+            <!-- 🇩🇪 Bundesliga -->
+            <a href="#" onclick="redirectToLeaguePage('2002')" class="card-link" id="league-card">
+                {{> homepage/league-card leagueName="Bundesliga" logo="./img/homepage/bundesliga/icon.png" title="./img/homepage/bundesliga/title.png"  }}
+            </a>
+
+            <!-- 🇮🇹 Serie A -->
+            <a href="#" onclick="redirectToLeaguePage('2019')" class="card-link" id="league-card">
+                {{> homepage/league-card leagueName="Serie A" logo="./img/homepage/serie-a/icon.png" title="./img/homepage/serie-a/title.png"}}
+            </a>
+
+            <!-- 🇫🇷 Ligue 1 -->
+            <a href="#" onclick="redirectToLeaguePage('2015')" class="card-link" id="league-card">
+                {{> homepage/league-card leagueName="Ligue 1" logo="./img/homepage/ligue-1/icon.png" title="./img/homepage/ligue-1/title.png"  }}
+            </a>
+
+            <!-- 🇧🇷 Brasileirao -->
+            <a href="#" onclick="redirectToLeaguePage('2013')" class="card-link" id="league-card">
+                {{> homepage/league-card leagueName="Brasileirao" logo="./img/homepage/brasileirao/icon.png" title="./img/homepage/brasileirao/title.png" }}
+            </a>
+
+        </div>
+    </div>
+</div>

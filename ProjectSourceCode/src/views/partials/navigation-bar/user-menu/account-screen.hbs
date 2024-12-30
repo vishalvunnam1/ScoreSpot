@@ -1,0 +1,32 @@
+<div class="account-portal-container" id="account-pane">
+    <div id="account-pane-content-container">
+        <div id="account-header-container">
+            <a id="username">Hello, {{user.username}}</a>
+            <div class="logout-container">
+                <a id="logout-button" class="account-portal-button" href="/logout">Logout</a>
+            </div>
+        </div>
+        <div id="account-favorite-teams-container">
+            <a id="account-favorite-teams-header">Favorite Teams:</a>
+            {{#each fav_teams}}
+            <div class="account-favorite-teams-card">
+                <div id="account-favorite-teams-card-logo-container">
+                    <a href="/club/{{this.teamid}}">
+                        <img id="account-favorite-teams-card-logo" src="{{this.teamlogo}}" alt="teamlogo">
+                    </a>
+                </div>
+
+                <a id="account-favorite-teams-card-title" href="/club/{{this.teamid}}">
+                    {{this.teamname}}
+                </a>
+
+                <div id="account-delete-favorite-team-button-container">
+                    <!-- Add a different image for hover effect -->
+                    <img id="account-delete-favorite-team-button" class="account-delete-favorite-team-button" src="/img/navigation-bar/user-menu/account-pane/delete-club.png" alt="Delete Favorite Team">
+                    <img id="account-delete-favorite-team-button-hover" class="account-delete-favorite-team-button" src="/img/navigation-bar/user-menu/account-pane/delete-club-hover.png" userID="{{this.userid}}" teamID="{{this.teamid}}" alt="Delete Favorite Team Hover" >
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

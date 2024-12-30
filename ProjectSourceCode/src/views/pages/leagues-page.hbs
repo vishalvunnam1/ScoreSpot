@@ -1,0 +1,90 @@
+<div id="league-page-body" class="page-container">
+
+    <!-- Container for all league information (logo, name, country, etc. ) <- top 100px -->
+    <div id="league-header-container" class="information-container">
+        <img id="generated-page-header-logo" src="{{league.competition.league_emblem}}" alt="{{league.competition.league_name}} Emblem">
+        <h1 id="generated-page-header-title">{{league.competition.league_name}}</h2>
+        <img id="generated-page-header-flag" src="{{league.area.league_flag}}" alt="{{league.competition.league_name}} Flag">
+    </div>
+
+    <!-- Container to display all stats for league <- bottom rest of the container -->
+    <div id="table-and-top-scorers-containers" class="page-content-container">
+
+        <!-- Container to display league table <- split 50% -->
+        <div id="league-table-container" class="content-container">
+
+            <!-- Put header above table container -->
+            <div id="league-table-header-container" class="header-container">
+                <h2>Table</h2>
+            </div>
+            
+            <!-- Container containing all league table stats -->
+            <div id="league-table-stats-container" class="card-container">
+                <table id="league-standings-table" class="alternating-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th></th>
+                            <th>Club</th>
+                            <th>GP</th>
+                            <th>W</th>
+                            <th>L</th>
+                            <th>D</th>
+                            <th>GD</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each league.standings}}
+                        <tr>
+                            <td>{{table.league_position}}</td>
+                            <td id="league-table-club-logo-column"><img id="league-table-club-logo" clubID="{{table.team_id}}" src="{{table.team_crest}}" alt="{{table.team_name}} Crest"></td>
+                            <td><span id="league-table-club-name-column" clubID="{{table.team_id}}">{{table.team_name}}</span></td>
+                            <td>{{games_played}}</td>
+                            <td>{{wins}}</td>
+                            <td>{{losses}}</td>
+                            <td>{{draws}}</td>
+                            <td id="league-table-goal-difference-column">{{goal_difference}}</td>
+                            <td id="league-table-points-column">{{points}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Container to display top scorers for league <- Split 50% -->
+        <div id="league-top-scorers-container" class="content-container">
+
+            <div id="league-top-scorers-header-container" class="header-container">
+                <h2>Top Scorers</h2>
+            </div>
+
+            <div id="league-top-scorers-stats-container" class="card-container">
+                <table id="league-top-scorers-table">
+                    <thead>
+                        <tr>
+                            <th>Goals</th>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Club</th>
+                            <th>GP</th>     
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each topScorers.scorers}}
+                        <tr id="top-scorers-row">
+                            <td id="league-top-scorers-goals-column">{{goals}}</td>
+                            <td><img id="league-top-scorers-logo" clubID="{{team.team_id}}" src="{{team.team_crest}}" alt="{{table.team_name}} Crest"></img></td>
+                            <td id="league-top-scorers-player-name-column">{{player.player_name}}</td>
+                            <td id="league-top-scorers-club-name-column" clubID="{{team.team_id}}">{{team.team_name}}</td>
+                            <td>{{games_played}}</td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

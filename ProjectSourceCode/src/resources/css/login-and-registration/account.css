@@ -1,0 +1,99 @@
+#account-pane {
+    display: none;
+}
+
+#account-pane-content-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+
+
+#account-header-container {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 3px solid red;
+
+    #username {
+        font-size: 23px;
+        font-weight: 500;
+    }  
+}
+
+#account-favorite-teams-container {
+    padding: 10px;
+}
+
+.account-favorite-teams-card {
+    
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    background-color: white;
+    border: 1px solid rgb(218, 218, 218);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 10px 0;    
+}
+
+.account-favorite-teams-card:hover {
+    transform: scale(1.01); /* Scale the row by 1.1 on hover */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+
+    #account-favorite-teams-card-title {
+        text-decoration: underline;
+    }
+
+    #account-favorite-teams-card-logo {
+        transform: scale(1.02); /* Scale the row by 1.1 on hover */
+    }
+}
+
+#account-favorite-teams-card-logo {
+    width: 35px;
+    max-height: 35px;
+    margin-right: 15px;
+}
+
+#account-favorite-teams-card-title {
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+
+
+/* Delete Button CSS --> Switches Between Icons */
+
+/* Align the delete button container */
+#account-delete-favorite-team-button-container {
+    margin-left: auto; /* Align the container all the way to the right */
+    display: inline-block;
+    position: relative;
+}
+
+.account-delete-favorite-team-button {
+    width: 15px;
+    cursor: pointer;
+    width: 18px;
+    height: auto;
+    
+}
+
+/* Don't show hover icon on start */
+#account-delete-favorite-team-button-hover {
+    display: none; /* Initially hide the hover image */
+}
+
+    /* Hover Effects */
+
+    #account-delete-favorite-team-button-container:hover #account-delete-favorite-team-button {
+        display: none; /* Hide the default image when hovered over */
+    }
+
+    #account-delete-favorite-team-button-container:hover #account-delete-favorite-team-button-hover {
+        display: inline-block; /* Display the hover image when hovered over */
+    }

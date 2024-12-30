@@ -1,0 +1,62 @@
+/*
+=================================
+      LEAGUE TABLE CONTAINER
+=================================
+*/
+
+/* Container for table and header */
+#league-table-container 
+{
+    width: 60%;
+    margin-right: 20px;
+}
+
+/*
+============================================
+        LEAGUE TABLE COLUMNS STYLE
+============================================
+*/
+
+/* Club Logo Column in Table Style */
+#league-table-club-logo-column {
+    width: 25px; 
+
+    /* Club Logo Style */
+    #league-table-club-logo 
+    {      
+        width: 25px;
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+}
+
+/* Club Name Column in Table Style */
+#league-table-club-name-column 
+{
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Points Column in Table Style */
+#league-table-points-column 
+{
+    font-weight: bolder;
+}
+
+/*
+==============================================================
+                 DYNAMIC PAGE WIDTH STYLES
+==============================================================
+*/
+
+/* Stlye for Screens Smaller than 1230px */
+@media (max-width: 1230px) 
+{
+    #league-table-container 
+    {
+        align-items: center;
+        width: 75%;
+        min-width: 580px;
+    }   
+}

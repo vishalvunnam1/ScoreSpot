@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <!-- Add your head content here -->
+    {{> head}}
+</head>
+<body>
+    <!-- Render the scoreboard header on every page -->
+    {{> navigation-bar/scoreboard-header/scoreboard-header}}
+
+    <!-- Add your navigation -->
+    {{> navigation-bar/nav}}
+
+    <!-- Render the main content of each page -->
+    {{{body}}}
+
+    <!-- Add your footer -->
+    {{> footer}}
+</body>
+</html>

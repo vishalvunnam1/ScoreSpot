@@ -1,0 +1,77 @@
+/*
+=================================
+    TABLE AND HEADER CONTAINER
+=================================
+*/
+
+#league-top-scorers-container 
+{
+    width: 40%;
+}
+
+/*
+===========================
+    TABLE COLUMNS STYLE
+===========================
+*/
+
+#league-top-scorers-goals-column 
+{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+#league-top-scorers-logo 
+{
+    width: 25px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+#league-top-scorers-player-name-column 
+{
+
+    font-size: 14px;
+    font-weight: bold;
+    padding-right: 15px;
+}
+
+#league-top-scorers-club-name-column 
+{
+    padding-right: 15px;
+}
+
+/*
+==============================================================
+                       HOVER STYLES
+==============================================================
+*/
+
+#league-top-scorers-stats-container tbody tr:hover 
+{
+
+    border: 1px solid lightgray;
+
+    #league-top-scorers-logo {
+        width: 32px;
+    }
+    
+    #league-top-scorers-club-name-column {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+/*
+==============================================================
+                 DYNAMIC PAGE WIDTH STYLES
+==============================================================
+*/
+
+@media (max-width: 1230px) {
+    #league-top-scorers-logo {
+        align-items: center;
+        width: 75%;
+    }   
+}

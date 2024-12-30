@@ -1,0 +1,38 @@
+version: '3.9'
+
+############################################################
+#     To Give the container a project related name run:    #
+#                                                          #
+#           docker-compose -p final-project up             #
+#                                                          #
+# ⚠️ Make sure current directory is: /ProjectSourceCode ⚠️ # 
+############################################################
+
+services:
+  db:
+    container_name: postgres-db
+    image: postgres:14
+    env_file: .env
+    ports:
+      - '5432:5432'
+    volumes:
+      - group-project:/var/lib/postgresql/data
+      - ./src/init_data:/docker-entrypoint-initdb.d
+  web:
+    container_name: node-web-interface
+    image: node:lts
+    user: 'node'
+    working_dir: /home/node/app
+    env_file: .env
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - db
+    ports:
+      - '3000:3000'
+    volumes:
+      - ../ProjectSourceCode:/home/node/app  # Mount ProjectSourceCode directory
+      - ../ProjectSourceCode/node_modules:/home/node/app/node_modules  # Mount node_modules directory
+    command: 'npm run start'
+volumes:
+  group-project:

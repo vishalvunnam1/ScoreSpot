@@ -1,0 +1,35 @@
+/* Main Contents Container (Below Header) */
+#club-page-contents-container 
+{
+    display: flex;
+    flex-direction: row;
+}
+
+    /* Child Containers */
+
+    /* Left 20% of #club-page-contents-container */
+    #club-information-container
+    {
+        width: 20%;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Right 80% of #club-page-contents-container */
+    #club-stats-and-players-container 
+    {
+        width: 80%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+

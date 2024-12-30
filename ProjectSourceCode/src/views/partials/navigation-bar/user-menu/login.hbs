@@ -1,0 +1,29 @@
+    <!-- Linking forms.css -->
+    <div class="account-portal-container" id="login-pane">
+      <div class="form-container" id="login-form">
+        <h1 class="mt-5 mb-4">Login</h1>
+
+        <!-- Check if message variable is present to display message partial -->
+        {{#if message}}
+        {{> message}}
+        {{/if}}
+
+        <form action="/login" method="POST" class="mt-3">
+
+          <div class="mb-3">
+          <label for="username" class="form-label">Username:</label>
+          <input type="text" class="form-control" id="username" name="username" required>
+          </div>
+
+          <div class="mb-3">
+          <label for="password" class="form-label">Password:</label>
+          <input type="password" class="form-control" id="password" name="password" required>
+          </div>
+
+          <button class="account-portal-button" type="submit" id="login-submit">Submit</button>
+
+        </form>
+
+        <p class="mt-3">Don't have an account? <a id="register-button" href="/home">Register</a></p>
+      </div>
+    </div>

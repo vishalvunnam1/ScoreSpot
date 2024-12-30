@@ -1,0 +1,147 @@
+<div id="club-page-body" class="page-container">
+
+    <!-- Container on Top containing Club Information -->
+    <div id="club-header-container" class="information-container">
+        <img id="generated-page-header-logo" src="{{club.crest}}" alt="{{club.name}} Logo">
+        <h1 id="generated-page-header-title">{{club.name}}</h1>
+        <img id="generated-page-header-flag" src="{{club.area.club_flag}}" alt="{{club.name}} Flag">
+
+        {{#if user}}
+            {{#if isFav}}
+                <img id="club-favorite-button" src="/img/club-page/favorited.png" alt="Favorite Button">
+            {{else}}
+                <img id="club-favorite-button" src="/img/club-page/unfavorited.png" alt="Favorite Button">
+            {{/if}}
+
+        {{else}}
+            <img id="club-favorite-button" src="/img/club-page/cant-favorite.png" title="Please Sign In to Save a Favorite Club!">
+        {{/if}}
+
+<!-- Hidden input fields -->
+<input type="hidden" id="userID" value="{{user.userid}}">
+<input type="hidden" id="teamID" value="{{club.club_id}}">
+<input type="hidden" id="teamName" value="{{club.name}}">
+<input type="hidden" id="teamLogo" value="{{club.crest}}">
+    </div>
+
+    <div id="club-page-contents-container" class="page-content-container">
+
+        <!-- Container on Left Side containing Club Information -->
+        <div id="club-information-container" class="page-content-container">
+
+            <!-- Container for Club History Information -->
+            <div id="club-history-container" class="content-container">
+
+                <div id="club-information-table-header">
+                    <h2>Information</h2>
+                </div>
+
+                <div id="club-information-table-container" class="card-container">
+                    <table id="club-information-table">
+                        <tbody>
+                            <!-- Club Address Container -->
+                            <tr>
+                                <td>
+                                    <span style="font-weight: bold;">Club Address:</span><br>
+                                    {{club.address}}
+                                </td>
+                            </tr>
+
+                            <!-- Club Foundation Container -->
+                            <tr>
+                                <td>
+                                    <span style="font-weight: bold;">Founded</span><br>
+                                    {{club.founded}}
+                                </td>
+                            </tr>
+
+                            <!-- Manager Information Table -->
+                            <tr>
+                                <td>
+                                    <span style="font-weight: bold;">Manager</span><br>
+                                    <span>Name: {{club.coach.name}}</span><br>
+                                    <span>Nationality: {{club.coach.nationality}}</span><br>
+                                    <span>DOB: {{club.coach.dateOfBirth}}</span><br>
+                                    <span>Contract Start: {{club.coach.contract.start}}</span><br>
+                                    <span>Contract End: {{club.coach.contract.until}}</span><br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> <!-- End of Club History Table Container -->
+            </div> <!-- End of Club History Container -->
+
+            <!-- Container to Display Club's Current Competitions -->
+            <div id="club-competitions-container" class="content-container">
+
+                <div id="club-competitions-table-header">
+                    <h2>Competitions</h2>
+                </div>
+
+                <div id="club-competitions-table-container" class="card-container">
+                    <table id="club-competitions-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each club.runningCompetitions}}
+                            <tr>
+                                <td><img id="competition-logo" src="{{emblem}}"></td>
+                                <td>{{name}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div> <!-- End of Club Competitions Table Container -->
+            </div> <!-- End of Club Competitions Container -->
+        
+        </div> <!-- End of Club Information Container (Left 20%) -->
+
+        <!-- Container on Right Side containing Club Stats -->
+        <div id="club-stats-and-players-container" class="page-section-container">
+
+            <!-- Club Player Container -->
+            <div id="club-players-container" class="content-container">
+                
+                <div id="club-players-table-header" class="content-container">
+                    <h2>Players</h2>
+                </div>
+                
+                <div id="club-players-table-container" class="card-container">
+                    <table id="club-players-table" class="alternating-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                                <th>DOB</th>
+                                <th>Nationality</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each club.squad}}
+                            <tr>
+                                <td>{{name}}</td>
+                                <td>{{position}}</td>
+                                <td>{{dateOfBirth}}</td>
+                                <td>{{nationality}}</td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div> <!-- End of Club Players Table Container -->
+            </div> <!-- End of Club Players Container -->
+
+        </div> <!-- End of Club Stats Container -->
+    
+    </div>
+
+</div>
+
+
+
+
+
+

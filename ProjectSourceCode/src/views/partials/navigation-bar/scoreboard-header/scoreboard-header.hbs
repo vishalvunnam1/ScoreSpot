@@ -1,0 +1,10 @@
+<div class="scoreboard-container" id="scoreboard">
+    <div class="scoreboard-league-container">
+        
+        <!-- Iterate over matches and insert a game card for each -->
+        {{#each matches}}
+            {{> navigation-bar/scoreboard-header/game-card}}
+        {{/each}}
+
+    </div>
+</div>

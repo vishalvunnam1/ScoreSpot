@@ -1,0 +1,81 @@
+/* Container for all page contents */
+#page-container {
+  width: 100%;
+  text-align: center; /* Center the content horizontally */
+}
+
+/* Styling for text at top of the page */
+#leagues-header {
+  font-family: 'Scottsdale-Italic';
+  display: inline-block; /* Ensure the width is based on content */
+  border-bottom: 1.5px solid #999696; /* Adjust the color and thickness as needed */
+}
+
+/* Position cards in the center of the screen */
+#card-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stylize League Cards */
+#league-card {
+  width: 500px; /* Set width of the banner to 100% of viewport width */
+  height: 150px;
+  margin: 20px;
+  text-align: center; /* Center the content horizontally */
+  background: linear-gradient(to right, white, rgb(245, 245, 245), rgb(227, 227, 227)); /* Gradient from white to gray */
+  padding: 10px; /* Adjust padding as needed */
+  position: relative; /* Needed for absolute positioning */
+  overflow: hidden; /* Hide the overflowing skewed content */
+  transform: skewX(-20deg); /* Skew the banner to create a triangular side */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition for smooth transformation and box-shadow */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.4);
+
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+/* Counter skew contents to keep inner content straight*/
+#card-contents {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Align items vertically */
+  transform: skewX(20deg); /* Skew the banner to create a triangular side */
+}
+
+
+#league-card:hover {
+  transform: skewX(-20deg) scale(1.05); /* Increase scale on hover to make it pop */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add box-shadow on hover for depth effect */
+}
+
+#league-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1%; /* Width of the red strip */
+  background-color: red; /* Red color */
+}
+
+
+#logo {
+  width: 30%; /* Set width for logo */
+  max-height: 100px;
+  max-width: 100px;
+  margin-right: 20px;
+}
+
+.title-wrapper {
+  width: 70%; /* Set width for title wrapper */
+}
+
+#title-logo {
+  max-height: 80px;
+  max-width: 250px;
+}
+
+

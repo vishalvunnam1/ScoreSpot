@@ -1,0 +1,170 @@
+/*
+==============================================================
+                 ENTIRE PAGE CONTAINER
+==============================================================
+*/
+
+.page-container {
+        /* --- SIZE CONTAINER --- */
+        width: 100%; /* Set the width to the full width of screen */
+        padding: 10px 100px; /* Create some distance between page boundries and elements */
+    
+        /* --- FORMAT CHILD ITEMS (Table and Leading Scorers Cards) --- */
+        display: flex; /* Enable flexbox layout */
+        flex-direction: column; /* Arrange child elements vertically */
+}
+
+.page-content-container {
+    display: flex;
+    flex-direction: row;
+}
+
+/*
+=================================
+    LEAGUE INFORMATION HEADER
+=================================
+*/
+
+/* Stylization for League Information Header Card */
+.information-container
+{
+    /* --- POSITION CONTAINER --- */
+    align-items: center; /* Center content vertically */
+    margin: 20px;
+
+    /* --- SIZE CONTAINER --- */
+    height: 100px;
+    width: fit-content;
+    padding: 10px 20px; /* Adjust padding as needed */
+
+    /* --- STYLE CONTAINER --- */
+    background: linear-gradient(to right, white, rgb(245, 245, 245), rgb(227, 227, 227)); /* Gradient from white to gray */
+    transform: skewX(-20deg); /* Skew the banner to create a triangular side */
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
+
+    /* --- FORMAT CHILD ITEMS (logo, league name, flag) --- */
+    display: flex; /* Enable flexbox layout */
+    flex-direction: row; /* Arrange child elements horizontally */
+}
+
+/* Adds Red Diagonal Strip at the end of the #league-information-container */
+.information-container::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 8px; /* Width of the red strip */
+    background-color: red; /* Red color */
+}
+
+    /*
+    ===========================
+    LEAGUE INFORMATION CHILD ITEMS
+    ===========================
+    */
+
+    /* Styling for League Logo in League Information Header */
+    #generated-page-header-logo 
+    {
+        margin: 0px 30px;
+        transform: skewX(20deg); /* Skew the banner to create a triangular side */
+        height: 80%;
+    }
+
+    /* Styling for League Title in League Information Header */
+    #generated-page-header-title 
+    {
+        transform: skewX(20deg); /* Skew the banner to create a triangular side */
+        margin-right: 20px;
+    }
+
+    /* Styling for Flag in League Information Header */
+    #generated-page-header-flag 
+    {
+        transform: skewX(20deg); /* Skew the banner to create a triangular side */
+        height: 20px;
+        margin-right: 130px;
+    }
+
+/*
+=============================================
+             CARDS IN PAGE BODY
+=============================================
+*/
+    
+/* Styling for All Card Containers on Generated Pages */
+.card-container
+{
+    /* --- POSITION CONTAINER --- */
+    margin: 0 10px;
+    margin-bottom: 20px;
+
+    /* --- SIZE CONTAINER --- */
+    padding: 15px;
+
+    /* --- STYLE CONTAINER --- */
+    background: linear-gradient(to top, rgb(216, 216, 216), rgb(236, 236, 236), rgb(241, 240, 240));
+    border: 1px solid gray;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling for All Tables on Generated Pages */
+table
+{
+    width: 100%;
+    padding: 15px;
+
+    /* Table Header Styling */
+    th 
+    {
+        border-bottom: 3px solid red; /* Add red bottom border */
+    }
+
+    /* Data in Row Style */
+    td
+    {
+        padding: 5px;
+    }
+}
+
+/* Styling for All Tables Designated to Alternate on Generated Pages */
+.alternating-table tbody tr:nth-child(odd)
+{
+    /* Every Odd Row in Table Style */
+    background-color: #d2d2d2; /* Light gray for odd rows */
+}
+
+/*
+==============================================================
+                       HOVER STYLES
+==============================================================
+*/
+
+/* Hover Styling for All Card Containers on Generated Pages */
+.card-container:hover
+{
+    transform: scale(1.01); /* Scale the row by 1.1 on hover */
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Styling for All Tables Designated to Alternate on Generated Pages */
+.alternating-table tbody tr:hover 
+{
+    /* Create border around row on hover */
+    border: 1px solid lightgray;
+    border-radius: 10px;
+
+    /* Make club logo larger on hover */
+    #league-table-club-logo
+    {
+        width: 32px;
+    }
+
+    /* Undeline club name on hover */
+    #league-table-club-name-column 
+    {
+        text-decoration: underline; /* Add underline effect */
+    }
+}

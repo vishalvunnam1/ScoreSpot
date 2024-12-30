@@ -1,0 +1,26 @@
+.scoreboard-container {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Disable vertical scrolling */
+    white-space: nowrap; /* Prevent cards from wrapping to the next line */
+    border: 1px solid rgb(202, 2, 2);
+    margin: 0px;
+    height: 90px;
+
+    
+
+    background-color: rgb(255, 255, 255);
+
+    /* Inner box shadow */
+    box-shadow: inset 0px 0px 15px rgba(77, 76, 76, 0.3);
+}
+
+/* Hide scrollbar in scoreboard for webkit browsers */
+.scoreboard-container::-webkit-scrollbar {
+    display: none;
+}
+
+.scoreboard-league-container {
+    margin: 0px;
+    
+}
+

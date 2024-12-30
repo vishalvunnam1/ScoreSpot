@@ -1,0 +1,19 @@
+==== Meeting 1    03/21/2024  ==== 
+16 : 15 , start of meeting
+16 : 16 , feature list discussion
+16 : 20 , database discussion
+16 : 22 , questions
+16 : 23 , end of meeting
+
+==== Meeting 2    04/04/2024   ====
+15 : 45 : start
+15 : 48 : display of the project
+15 : 49 : overview of features and display of initial website
+15 : 52 : discussion on database
+15 : 53 : end of meeting
+
+==== Meeting 3    04/11/2024  ====
+16 : 00 : meeting start
+16 : 01 : progress check and showcase
+16 : 08 : feedback 
+16 : 10 : end of meeting

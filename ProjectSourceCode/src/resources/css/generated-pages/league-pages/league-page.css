@@ -1,0 +1,28 @@
+/*
+=============================================
+             CARDS IN PAGE BODY
+=============================================
+*/
+
+#table-and-top-scorers-containers 
+{
+    display: flex;
+    flex-direction: row;
+}
+
+/*
+==============================================================
+                 DYNAMIC PAGE WIDTH STYLES
+==============================================================
+*/
+
+/* Width of Screen is Less Than 950px */
+@media (max-width: 1230px) 
+{
+    #table-and-top-scorers-containers {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+    
